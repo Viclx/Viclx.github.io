@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非常简单的页面 · 极简卡片</title>
+    <!-- 一个极简的风格，干净、留白，只有一点点温柔的阴影和圆角 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f4f8;   /* 很浅的灰蓝底 */
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        /* 白色小卡片 —— 一切内容都在这张卡片里，非常简单 */
+        .card {
+            max-width: 560px;
+            width: 100%;
+            background: white;
+            border-radius: 28px;
+            padding: 2.2rem 2rem 2.5rem 2rem;
+            box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.15);
+            text-align: center;           /* 让大多数内联元素居中，但为了可读性，段落左对齐再微调 */
+            transition: all 0.2s ease;
+        }
+        /* 一点点俏皮的装饰小条 (很淡) */
+        .card::before {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 50px;
+            margin: 0 auto 1.6rem auto;
+            opacity: 0.5;
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 1.8rem;
+            font-weight: 350;
+            border-bottom: 1px solid #e9edf2;
+            padding-bottom: 1.4rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #334155;
+            margin: 1.2rem 0;
+            text-align: left;              /* 段落文字左对齐更好读 */
+        }
+        /* 让卡片里的图片舒服，圆润 */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 18px -6px rgba(0,0,0,0.2);
+            margin: 1rem 0 0.8rem 0;
+            display: block;
+        }
+        /* 一个非常基础的按钮风格（其实只放一个链接，但像按钮）*/
+        .simple-button {
+            display: inline-block;
+            background-color: #e7eaee;
+            color: #1e293b;
+            padding: 0.8rem 2.2rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            margin: 1.2rem 0 0.6rem 0;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .simple-button:hover {
+            background-color: #d0d7de;
+            transform: scale(0.98);
+        }
+        .simple-button:active {
+            background-color: #b9c2cc;
+        }
+        /* 脚注小字 */
+        .footer-note {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 2rem;
+            border-top: 1px dashed #dbe1e9;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 1.2rem 0;
+        }
+        /* 小图标列表（极简emoji列表） */
+        .mini-list {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            list-style: none;
+            margin: 1.6rem 0 0.4rem;
+            flex-wrap: wrap;
+        }
+        .mini-list li {
+            font-size: 1.3rem;
+            background: #f1f5f9;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #334155;
+        }
+        /* 保持所有内容都在卡片内部 */
+        .very-simple {
+            /* 这个类没用，只是提醒你它非常简单 */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🌱 简单网页</h1>
+        <div class="subhead">极简·干净·就这些</div>
+
+        <!-- 一个占位图片（来自占位图服务，非常轻） -->
+        <img src="https://picsum.photos/id/100/500/200" alt="示例图片 — 随机风景" loading="lazy">
+
+        <p>
+            这是一个 <strong>非常简单的HTML页面</strong>。只有一张白色卡片，一点点灰色背景。
+            没有复杂的框架，没有多余的脚本。只有基础的文字、图片和极少的样式。
+        </p>
+
+        <!-- 简单的分割 -->
+        <hr>
+
+        <p>
+            ✦ 你完全可以复制全部代码，保存成 <code>.html</code> 文件直接打开。<br>
+            ✦ 所有内容都居中/左对齐，读起来舒服。颜色只有灰、白、蓝灰。
+        </p>
+
+        <!-- 超简易的emoji列表，突出“简单” -->
+        <ul class="mini-list">
+            <li><span>🧩</span> 极简</li>
+            <li><span>🎯</span> 直接</li>
+            <li><span>💡</span> 干净</li>
+        </ul>
+
+        <!-- 一个像按钮的链接，但没有js，只是示意 -->
+        <a href="#" class="simple-button">只是看着像按钮</a>
+
+        <!-- 再补一小段文字，完全左对齐 -->
+        <p style="font-size: 1rem; color: #475569; margin-top: 1.6rem;">
+            ⚡ 甚至连菜单都没有。但包含了网页最基本的东西：<br>
+            &nbsp;&nbsp;• 标题 & 副标题<br>
+            &nbsp;&nbsp;• 一张图片 (来自 picsum 的随机图片)<br>
+            &nbsp;&nbsp;• 段落 & 分割线 & 小装饰<br>
+            &nbsp;&nbsp;• 一个无功能的按钮 (链接)
+        </p>
+
+        <!-- 脚注部分，非常轻 -->
+        <div class="footer-note">
+            ☕ 极简页面 · 少于 100 行 CSS · 你随便改
+        </div>
+    </div>
+
+    <!-- 没有script，没有任何多余代码。就这些。 -->
+</body>
+</html>
